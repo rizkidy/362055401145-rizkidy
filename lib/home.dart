@@ -6,58 +6,71 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
-  int _selectedNavbar = 0;
-
-  void _changeSelectedNavBar(int index) {
-    setState(() {
-      _selectedNavbar = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 20),
-        child: Column(
-          children: <Widget>[
-            CircleAvatar(
-              radius: 75.0,
-            ),
-            Text(
-              'RIZKI DWI YULIANTO',
-              style: TextStyle(color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              '362055401145',
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            // bottomNavigationBar: BottomNavigationBar(
-            //   items: const <BottomNavigationBarItem>[
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.home),
-            //       title: Text('Beranda'),
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.notifications),
-            //       title: Text('Notifikasi'),
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.query_builder),
-            //       title: Text('About'),
-            //     ),
-            //     BottomNavigationBarItem(
-            //       icon: Icon(Icons.person),
-            //       title: Text('Akun'),
-            //     ),
-            //   ],
-            //   currentIndex: _selectedNavbar,
-            //   selectedItemColor: Colors.green,
-            //   unselectedItemColor: Colors.grey,
-            //   showUnselectedLabels: true,
-            //   onTap: _changeSelectedNavBar,
-            // ),
-          ],
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            colors: [
+              Colors.lightBlue,
+              Colors.white
+            ],
+          ),
+        ),
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 80,
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 0.5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 70,
+                      height: 70,
+                      decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                      child: Center(
+                        child: Icon(
+                          Icons.person,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'RIZKI DWI YULIANTO',
+                      style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '362055401145',
+                      style: TextStyle(color: Colors.black, fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(60),
+                      topRight: Radius.circular(60),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
