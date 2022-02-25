@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/home.dart';
+import 'package:helloworld/menu.dart';
 
 void main() {
   runApp(
@@ -10,7 +10,7 @@ void main() {
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => loginPage(),
-        '/home': (context) => homePage(),
+        '/menu': (context) => menu(),
       },
     ),
   );
@@ -97,7 +97,7 @@ class _loginPageState extends State<loginPage> {
                         ),
                         color: Colors.lightBlue,
                         onPressed: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushNamed(context, '/menu');
                         },
                       ),
                       RaisedButton(
