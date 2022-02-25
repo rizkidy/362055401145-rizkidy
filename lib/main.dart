@@ -1,41 +1,66 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+void main() {
+  runApp(MaterialApp(title: 'Project UTS', debugShowCheckedModeBanner: false, home: homePage()));
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
+class homePage extends StatefulWidget {
+  @override
+  _homePageState createState() => _homePageState();
+}
 
-  const MyHomePage({@required this.title});
+class _homePageState extends State<homePage> {
+  int _selectedNavbar = 0;
+
+  void _changeSelectedNavBar(int index) {
+    setState(() {
+      _selectedNavbar = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            snap: true,
+            floating: true,
+            expandedHeight: 160.0,
+            flexibleSpace: const FlexibleSpaceBar(
+              title: Text('SliverAppBar'),
+              background: Image(
+                image: AssetImage('asset/bg.jpg'),
+              ),
+            ),
+          ),
+          BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text('Beranda'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notifications),
+                title: Text('Notifikasi'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.question_answer),
+                title: Text('About'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                title: Text('Akun'),
+              ),
+            ],
+            currentIndex: _selectedNavbar,
+            selectedItemColor: Colors.green,
+            unselectedItemColor: Colors.grey,
+            showUnselectedLabels: true,
+            onTap: _changeSelectedNavBar,
+          ),
+        ],
       ),
     );
   }
