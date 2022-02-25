@@ -1,139 +1,77 @@
-import 'package:brotherhood_cafe/home.dart';
-import 'package:brotherhood_cafe/menu.dart';
 import 'package:flutter/material.dart';
 
-class Registrasi extends StatefulWidget {
-  @override
-  State<Registrasi> createState() => _Registrasi();
+void main() {
+  runApp(MaterialApp(title: 'Project UTS', debugShowCheckedModeBanner: false, theme: ThemeData(primarySwatch: Colors.lightBlue), home: loginPage()));
 }
 
-class _Registrasi extends State<Registrasi> {
-  String name = 'rizki';
-  String nomor = '10';
-  String alert = 'Masukkan data dibawah!';
+class loginPage extends StatefulWidget {
+  @override
+  _loginPageState createState() => _loginPageState();
+}
 
-  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
-
-  TextEditingController nameInput = TextEditingController();
-  TextEditingController nomorInput = TextEditingController();
-
-  void prosesRegistrasi() {
-    if (_formkey.currentState!.validate()) {
-      if (nameInput.text == name && nomorInput.text == nomor) {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => homePage()));
-      }
-    } else {
-      setState(() {
-        alert = 'Tolong masukkan data anda!';
-      });
-    }
-  }
-
+class _loginPageState extends State<loginPage> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(8),
-        color: Colors.orangeAccent[400],
+        padding: EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: 130,
-              height: 130,
-              decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+              width: 160,
+              height: 160,
+              decoration: BoxDecoration(shape: BoxShape.rectangle),
               child: Center(
-                child: Icon(
-                  Icons.person,
-                  size: 90,
-                  color: Colors.white,
+                child: Image(
+                  image: AssetImage('asset/logo.jpg'),
                 ),
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 5.0,
             ),
-            Text('Selamat datang di Brotherhood Cafe!', style: TextStyle(fontSize: 20, color: Colors.black)),
-            SizedBox(
-              height: 30,
+            Text(
+              'SELAMAT DATANG',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
             ),
-            Text(alert),
             SizedBox(
-              height: 20,
+              height: 5.0,
+            ),
+            Text(
+              'Silahkan Masuk datau Daftar',
+              style: TextStyle(fontSize: 14, color: Colors.black),
             ),
             Form(
-              key: _formkey,
+              key: _formKey,
               child: Column(
                 children: <Widget>[
                   TextFormField(
-                      controller: nameInput,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Masukkan nama anda!';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                          prefixIcon: Icon(
-                            Icons.person,
-                            size: 40,
-                            color: Colors.black,
-                          ),
-                          hintText: "Silahkan masukkan nama anda",
-                          hintStyle: TextStyle(color: Colors.black),
-                          labelText: "Nama",
-                          labelStyle: TextStyle(color: Colors.black))),
+                    decoration: InputDecoration(
+                      hintText: 'Nomor Peserta',
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Masukkan nama anda!';
+                      }
+                      return null;
+                    },
+                  ),
                   SizedBox(
                     height: 20,
                   ),
-                  Column(
-                    children: <Widget>[
-                      TextFormField(
-                        controller: nomorInput,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Masukkan nomor meja anda!';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-                          prefixIcon: Icon(
-                            Icons.chair_sharp,
-                            size: 40,
-                            color: Colors.black,
-                          ),
-                          hintText: "Silahkan masukkan nomor meja anda",
-                          hintStyle: TextStyle(color: Colors.black),
-                          labelText: "No. Meja",
-                          labelStyle: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Card(
-                        color: Colors.black,
-                        elevation: 10,
-                        child: Container(
-                          height: 50,
-                          child: InkWell(
-                            splashColor: Colors.white,
-                            onTap: () => prosesRegistrasi(),
-                            child: Center(
-                              child: Text(
-                                'Next',
-                                style: TextStyle(fontSize: 20, color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'Password',
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Masukkan password anda!';
+                      }
+                      return null;
+                    },
                   ),
                 ],
               ),
