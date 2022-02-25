@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:uts_rizkidy/home.dart';
 
 void main() {
-  runApp(MaterialApp(title: 'Project UTS', debugShowCheckedModeBanner: false, theme: ThemeData(primarySwatch: Colors.lightBlue), home: loginPage()));
+  runApp(
+    MaterialApp(
+      title: 'Project UTS',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.lightBlue),
+      initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/': (context) => loginPage(),
+        '/home': (context) => homePage(),
+      },
+    ),
+  );
 }
 
 class loginPage extends StatefulWidget {
@@ -72,6 +84,33 @@ class _loginPageState extends State<loginPage> {
                       }
                       return null;
                     },
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      RaisedButton(
+                        child: Text(
+                          'Masuk',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        color: Colors.lightBlue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
+                      ),
+                      RaisedButton(
+                        child: Text(
+                          'Daftar',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        color: Colors.lightBlue,
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
                 ],
               ),
