@@ -31,7 +31,7 @@ class _loginPageState extends State<loginPage> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text(
               'SELAMAT DATANG',
