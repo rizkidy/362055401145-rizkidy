@@ -82,13 +82,9 @@ class _homePageState extends State<homePage> {
                                     Container(
                                       height: 40,
                                       width: 40,
-                                      color: Colors.lightBlue,
                                       child: Image(
                                         image: AssetImage('asset/jurusan.jpg'),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
                                     ),
                                     Text(
                                       'Daftar',
@@ -103,13 +99,9 @@ class _homePageState extends State<homePage> {
                                     Container(
                                       height: 40,
                                       width: 40,
-                                      color: Colors.lightBlue,
                                       child: Image(
                                         image: AssetImage('asset/identitas.jpg'),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
                                     ),
                                     Text(
                                       'Edit',
@@ -124,13 +116,9 @@ class _homePageState extends State<homePage> {
                                     Container(
                                       height: 40,
                                       width: 40,
-                                      color: Colors.lightBlue,
                                       child: Image(
                                         image: AssetImage('asset/cetak.png'),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
                                     ),
                                     Text(
                                       'Cetak',
@@ -145,13 +133,9 @@ class _homePageState extends State<homePage> {
                                     Container(
                                       height: 40,
                                       width: 40,
-                                      color: Colors.lightBlue,
                                       child: Image(
                                         image: AssetImage('asset/slip.jpg'),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
                                     ),
                                     Text(
                                       'Slip',
@@ -162,6 +146,107 @@ class _homePageState extends State<homePage> {
                                   ],
                                 ),
                               ],
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Informasi Terkini',
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              height: 380.0,
+                              child: ListView(
+                                children: [
+                                  Card(
+                                    margin: EdgeInsets.all(10),
+                                    child: ListTile(
+                                      tileColor: Colors.black,
+                                      title: Text('SBMPN', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
+                                      subtitle: Text(
+                                        'Seleksi Bersama Masuk Politeknik Negeri',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: CircleAvatar(
+                                        radius: 14,
+                                        backgroundColor: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Center(
+                                    child: Container(
+                                      height: 100,
+                                      width: 250,
+                                      child: Image(
+                                        image: AssetImage('asset/sbmpn.jpg'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Card(
+                                    margin: EdgeInsets.all(10),
+                                    child: ListTile(
+                                      tileColor: Colors.black,
+                                      title: Text('SBMPN', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
+                                      subtitle: Text(
+                                        'Seleksi Bersama Masuk Politeknik Negeri',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: CircleAvatar(
+                                        radius: 14,
+                                        backgroundColor: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Center(
+                                    child: Container(
+                                      height: 100,
+                                      width: 250,
+                                      child: Image(
+                                        image: AssetImage('asset/sbmpn.jpg'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Card(
+                                    margin: EdgeInsets.all(10),
+                                    child: ListTile(
+                                      tileColor: Colors.black,
+                                      title: Text('SBMPN', style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold)),
+                                      subtitle: Text(
+                                        'Seleksi Bersama Masuk Politeknik Negeri',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      leading: CircleAvatar(
+                                        radius: 14,
+                                        backgroundColor: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Center(
+                                    child: Container(
+                                      height: 100,
+                                      width: 250,
+                                      child: Image(
+                                        image: AssetImage('asset/sbmpn.jpg'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
