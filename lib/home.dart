@@ -68,7 +68,7 @@ class _homePageState extends State<homePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'menu Utama',
+                              'Menu Utama',
                               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
