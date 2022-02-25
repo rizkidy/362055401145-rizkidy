@@ -60,11 +60,119 @@ class _homePageState extends State<homePage> {
               SizedBox(height: 20),
               Expanded(
                 child: Container(
+                  child: ListView(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(20, 0.5, 20, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'menu Utama',
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      color: Colors.lightBlue,
+                                      child: Image(
+                                        image: AssetImage('asset/jurusan.jpg'),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Daftar',
+                                    ),
+                                    Text(
+                                      'Jurusan',
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      color: Colors.lightBlue,
+                                      child: Image(
+                                        image: AssetImage('asset/identitas.jpg'),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Edit',
+                                    ),
+                                    Text(
+                                      'Identitas',
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      color: Colors.lightBlue,
+                                      child: Image(
+                                        image: AssetImage('asset/cetak.png'),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Cetak',
+                                    ),
+                                    Text(
+                                      'Kartu Peserta',
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      color: Colors.lightBlue,
+                                      child: Image(
+                                        image: AssetImage('asset/slip.jpg'),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Slip',
+                                    ),
+                                    Text(
+                                      'Pembayaran',
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(60),
-                      topRight: Radius.circular(60),
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
                     ),
                   ),
                 ),
