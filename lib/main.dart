@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uts_rizkidy/home.dart';
-
+import 'package:helloworld/home.dart';
 import 'https://flutlab.io/root/app/lib/home.dart';
 
 void main() {
